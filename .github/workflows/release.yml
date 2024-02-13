@@ -2,8 +2,7 @@ name: goreleaser
 
 on:
   push:
-    branches:
-      - "main"
+    tags: ["a/v*", "b/v*"]
 
 permissions:
   contents: write
