@@ -13,7 +13,7 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
-      using: 'node20'
+
     env:
       flags: ""
     steps:
@@ -36,5 +36,4 @@ jobs:
           args: release --clean ${{ env.flags }}
 
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
