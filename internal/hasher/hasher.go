@@ -15,7 +15,7 @@ import (
 var f embed.FS
 */
 
-func hasher(args []string) string {
+func Hasher(args []string) string {
 	argus := args
 	hasher := md5.New()
 
