@@ -2,7 +2,7 @@ name: goreleaser
 
 on:
   push:
-    tags: ["a/v*", "b/v*", "get/v*", "bin/v*"]
+    tags: ["a/v*", "b/v*", "get/v*", "bin/v*", "internal/v*"]
 
 permissions:
   contents: write
@@ -28,6 +28,9 @@ jobs:
       - if: startsWith(github.ref, 'refs/tags/b/v')
         shell: bash
         run: echo "flags=-f ./b/.goreleaser.yaml" >> $GITHUB_ENV
+        if: startsWith(github.ref, 'refs/tags/internal/v')
+        shell: bash
+        run: echo "flags=-f ./internal/.goreleaser.yaml" >> $GITHUB_ENV
       - uses: goreleaser/goreleaser-action@v4
         with:
           distribution: goreleaser-pro
