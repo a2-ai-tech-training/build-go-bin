@@ -40,14 +40,17 @@ func TestHasher(t *testing.T) {
 
 		}
 	*/
-	test1 := []string{""}
+	a_1 := []string{""}
+	h_1 := Hasher(a_1)
 	e_1 := "d41d8cd98f00b204e9800998ecf8427e"
-	test2 := []string{"--json"}
+	a_2 := []string{"--json"}
+	h_2 := Hasher(a_2)
 	e_2 := "31d5e31c2e1e0b3c281f5194f130287e"
-	test3 := []string{"-vvv"}
+	a_3 := []string{"-vvv"}
+	h_3 := Hasher(a_3)
 	e_3 := "0cc598961dc9ae41055f83d0950544f3"
 
-	assert.Equal(t, Hasher(test1), e_1)
+	assert.Equal(t, h_1, e_1)
 	fmt.Printf("Expected Hash: %s\n", e_1)
 	assert.Equal(t, Hasher(test2), "31d5e31c2e1e0b3c281f5194f130287e")
 	fmt.Printf("Expected Hash: %s\n", e_2)
