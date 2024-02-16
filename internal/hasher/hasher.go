@@ -5,7 +5,7 @@ import (
 	"crypto/md5"
 	//"embed"
 	"encoding/hex"
-	//"fmt"
+	"fmt"
 	//"log"
 	//"os"
 )
