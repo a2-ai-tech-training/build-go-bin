@@ -1,13 +1,8 @@
 package hasher
 
 import (
-	//"bufio"
 	"crypto/md5"
-	//"embed"
 	"encoding/hex"
-	"fmt"
-	//"log"
-	//"os"
 )
 
 /*

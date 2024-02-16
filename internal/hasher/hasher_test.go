@@ -1,11 +1,8 @@
 package hasher
 
 import (
-	//"fmt"
 	"fmt"
-
 	"github.com/stretchr/testify/assert"
-	//"os"
 	"testing"
 )
 
