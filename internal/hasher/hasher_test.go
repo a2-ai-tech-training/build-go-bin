@@ -41,7 +41,7 @@ func TestHasher(t *testing.T) {
 
 		}
 	*/
-	test1 := []string{""}
+	test1 := []string{"a"}
 	test2 := []string{"--json"}
 	test3 := []string{"-vvv"}
 
