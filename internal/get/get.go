@@ -11,7 +11,7 @@ import (
 	"strings"
 )
 
-func main() {
+func get(args []string) {
 
 	args := os.Args[1:]
 	folder := os.Args[1]
