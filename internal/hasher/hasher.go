@@ -25,7 +25,7 @@ func Hasher(args []string) string {
 
 	hash := hex.EncodeToString(hasher.Sum(nil))
 
-	hash_path := fmt.Sprintf("outputs/%s.txt", hash)
-	fmt.Println(hash_path)
+	//hash_path := fmt.Sprintf("outputs/%s.txt", hash)
+	//fmt.Println(hash_path)
 	return hash
 }
