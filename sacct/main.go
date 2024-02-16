@@ -1,11 +1,54 @@
+// https://slurm.schedmd.com/sacct.html
 package main
 
 import (
+	"bufio"
+	"crypto/md5"
+	"embed"
+	"encoding/hex"
 	"fmt"
-	"github.com/a2-ai-tech-training/build-go-bin/internal/scanner"
+	"log"
+	"os"
 )
 
+// https://slurm.schedmd.com/sacct.html
+// for commands
+//
+//go:embed outputs/*
+var f embed.FS
+
 func main() {
-	fmt.Println("Test")
+
+	arguments := os.Args[1:]
+	hasher := md5.New()
+
+	for _, v := range arguments {
+		hasher.Write([]byte(v))
+	}
+
+	hash := hex.EncodeToString(hasher.Sum(nil))
+
+	hash_path := fmt.Sprintf("outputs/%s.txt", hash)
+
+	file, err := f.Open(hash_path)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+
+	// Skips first line that contains command
+	scanner.Scan()
+
+	for scanner.Scan() {
+		fmt.Println(scanner.Text())
+	}
+
+	if err := scanner.Err(); err != nil {
+		log.Fatal(err)
+	}
 
 }
