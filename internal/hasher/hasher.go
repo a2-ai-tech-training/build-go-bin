@@ -27,5 +27,5 @@ func Hasher(args []string) string {
 
 	hash_path := fmt.Sprintf("outputs/%s.txt", hash)
 	fmt.Println(hash_path)
-	return hash_path
+	return hash
 }
