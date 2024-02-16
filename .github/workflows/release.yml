@@ -2,7 +2,7 @@ name: goreleaser
 
 on:
   push:
-    tags: ["a/v*", "b/v*"]
+    tags: ["a/v*", "b/v*", "get/v*", "bin/v*"]
 
 permissions:
   contents: write
@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-go@v3
         with:
-          go-version: 1.19
+          go-version: 1.21
       - if: startsWith(github.ref, 'refs/tags/a/v')
         shell: bash
         run: echo "flags=-f ./a/.goreleaser.yaml" >> $GITHUB_ENV
