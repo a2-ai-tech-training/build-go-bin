@@ -1,4 +1,4 @@
-package test_hasher
+package hasher
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ type hash_path struct {
 	fullPath string
 }
 
-func test_hasher() {
+func TestHasher(t *testing.T) {
 	/*
 		type test struct {
 			input get.args
@@ -25,15 +25,15 @@ func test_hasher() {
 		}
 		possibleArgs := []values{
 			{
-				ArgStr: ""
+				ArgStr: "",
 				Str: "outputs/d41d8cd98f00b204e9800998ecf8427e.txt"
 			},
 			{
-				ArgStr: "-vvv"
+				ArgStr: "-vvv",
 				Str: "outputs/0cc598961dc9ae41055f83d0950544f3.txt"
 			},
 			{
-				ArgStr: "--json"
+				ArgStr: "--json",
 				Str: "outputs/31d5e31c2e1e0b3c281f5194f130287e.txt"
 			}
 		}
@@ -48,5 +48,5 @@ func test_hasher() {
 	assert.Equal(hasher(test1), "outputs/d41d8cd98f00b204e9800998ecf8427e.txt")
 	assert.Equal(hasher(test2), "outputs/31d5e31c2e1e0b3c281f5194f130287e.txt")
 	assert.Equal(hasher(test3), "outputs/0cc598961dc9ae41055f83d0950544f3.txt")
-	fmt.Println("ayo")
+
 }
