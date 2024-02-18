@@ -3,7 +3,6 @@ package hasher
 import (
 	"crypto/md5"
 	"encoding/hex"
-	"fmt"
 )
 
 /*
@@ -22,6 +21,5 @@ func Hasher(args []string) string {
 	hash := hex.EncodeToString(hasher.Sum(nil))
 
 	//hash_path := fmt.Sprintf("outputs/%s.txt", hash)
-	fmt.Printf("Hash for %s:\n%s\n", args, hash)
 	return hash
 }

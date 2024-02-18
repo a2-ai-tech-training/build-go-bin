@@ -3,12 +3,12 @@ package main
 
 import (
 	"bufio"
-	"crypto/md5"
 	"embed"
-	"encoding/hex"
 	"fmt"
 	"log"
 	"os"
+
+	"github.com/a2-ai-tech-training/build-go-bin/internal/hasher"
 )
 
 // https://slurm.schedmd.com/sacct.html
@@ -20,13 +20,7 @@ var f embed.FS
 func main() {
 
 	arguments := os.Args[1:]
-	hasher := md5.New()
-
-	for _, v := range arguments {
-		hasher.Write([]byte(v))
-	}
-
-	hash := hex.EncodeToString(hasher.Sum(nil))
+	hash := hasher.Hasher(arguments)
 
 	hash_path := fmt.Sprintf("outputs/%s.txt", hash)
 
