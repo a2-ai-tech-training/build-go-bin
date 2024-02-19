@@ -17,7 +17,9 @@ func main() {
 
 	arguments := os.Args[1:]
 	hash := hasher.Hasher(arguments)
-
+	if os.Getenv("SCENARIO") != "" {
+		fmt.Println("SCENARIO:", os.Getenv("SCENARIO"))
+	}
 	hash_path := fmt.Sprintf("outputs/%s.txt", hash)
 
 	file, err := f.Open(hash_path)
