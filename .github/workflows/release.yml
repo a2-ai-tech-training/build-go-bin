@@ -2,7 +2,7 @@ name: goreleaser
 
 on:
   push:
-    tags: ["a/v*", "b/v*", "sacct/v*"]
+    tags: ["a/v*", "b/v*", "sacct/v*", "sinfo/v*"]
 
 permissions:
   contents: write
