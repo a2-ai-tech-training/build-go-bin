@@ -1,4 +1,4 @@
-// https://slurm.schedmd.com/sacct.html
+// https://slurm.schedmd.com/sinfo.html
 package main
 
 import (
