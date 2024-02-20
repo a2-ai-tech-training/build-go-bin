@@ -1,4 +1,4 @@
-package main
+package get
 
 import (
 	"crypto/md5"
@@ -13,7 +13,7 @@ import (
 
 func get(args []string) {
 
-	args := os.Args[1:]
+	//args := os.Args[1:]
 	folder := os.Args[1]
 	arguments := os.Args[2:]
 	argString := strings.Join(args, " ")
